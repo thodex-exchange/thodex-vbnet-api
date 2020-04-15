@@ -4,7 +4,7 @@ Imports System.Text
 Imports Newtonsoft.Json.Linq
 Imports RestSharp
 
-Module ThodeAPI
+Module ThodexAPI
     ReadOnly apisecret = ""
     ReadOnly apikey = ""
     ReadOnly url = "https://api.thodex.com/v1"

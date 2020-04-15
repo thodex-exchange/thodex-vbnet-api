@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DCD10183-0363-4816-A18F-64AA1BD1667B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>thodex_api_sample.ThodeAPI</StartupObject>
+    <StartupObject>thodex_api_sample.ThodexAPI</StartupObject>
     <RootNamespace>thodex_api_sample</RootNamespace>
     <AssemblyName>thodex_api_sample</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -83,7 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIException.vb" />
-    <Compile Include="ThodeAPI.vb" />
+    <Compile Include="ThodexAPI.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
