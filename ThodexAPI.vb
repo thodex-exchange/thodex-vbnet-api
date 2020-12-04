@@ -11,6 +11,7 @@ Module ThodexAPI
 
     Sub Main()
         Try
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
             Console.WriteLine(GetBalance())
             'Console.WriteLine(GetServerTime())
             'Console.WriteLine(GetMarkets())
@@ -173,6 +174,8 @@ Module ThodexAPI
         Dim rc As New RestClient()
         rc.BaseUrl = New Uri(url)
 
+
+
         params.Add("tonce", GetUnixTimestamp())
         params.Add("apikey", apikey)
 
@@ -185,7 +188,9 @@ Module ThodexAPI
         req.AddHeader("Authorization", authorization)
 
         resp = rc.Execute(req)
-
+        If Not resp.ResponseStatus = ResponseStatus.Completed Then
+            Throw New APIException(resp.ResponseStatus, resp.ErrorMessage)
+        End If
         content = resp.Content
         rc = Nothing
         req = Nothing
